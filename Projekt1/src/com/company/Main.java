@@ -16,7 +16,7 @@ public class Main {
             Connection con = DriverManager.getConnection(url, user, pass);
             if(con!=null)
             {
-                System.out.println("Jede");
+                System.out.println("Připojeno k databázi.");
 
             }
 
@@ -29,7 +29,8 @@ public class Main {
                 String brand = r.getString("Znacka");
                         String model = r.getString("Model");
                 int year = r.getInt("Rok vyroby");
-                System.out.printf("%-10s%-20s%-20s%-10s\n",id, brand,model, year);
+                String spz = r.getString("SPZ");
+                System.out.printf("%-10s%-20s%-20s%-10s%-20s\n",id, brand,model, year, spz);
             }
 
         } catch (ClassNotFoundException | SQLException e) {
