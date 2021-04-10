@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <AnchorPane layoutY="6.0" prefHeight="543.0" prefWidth="228.0" style="-fx-background-color: #808080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button layoutX="24.0" layoutY="320.0" mnemonicParsing="false" onAction="#Add_users" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: green;" text="Přidat rezervaci" textFill="WHITE" />
+                <Button layoutX="24.0" layoutY="376.0" mnemonicParsing="false" onAction="#Edit" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: Orange;" text="Aktualizovat rezervaci" textFill="#401212" />
+                <Button layoutX="24.0" layoutY="430.0" mnemonicParsing="false" onAction="#Delete" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: red;" text="Smazat rezervaci" textFill="WHITE" />
+                <TextField fx:id="txt_name" layoutX="24.0" layoutY="60.0" onKeyReleased="#search_user" prefHeight="30.0" prefWidth="180.0" promptText="Jméno a příjmeni" />
+                <TextField fx:id="txt_date" layoutX="24.0" layoutY="110.0" prefHeight="30.0" prefWidth="180.0" promptText="Datum příchodu" />
+                <TextField fx:id="txt_time" layoutX="24.0" layoutY="159.0" prefHeight="30.0" prefWidth="180.0" promptText="Čas příchodu" />
+                <TextField fx:id="txt_type" layoutX="24.0" layoutY="207.0" prefHeight="30.0" prefWidth="180.0" promptText="Typ" />
+                <TextField fx:id="txt_id" layoutX="24.0" layoutY="21.0" prefHeight="23.0" prefWidth="180.0" promptText="ID" />
+            <DatePicker fx:id="txt_date1" layoutX="24.0" layoutY="285.0" />
+            <TextField fx:id="txt_phone" layoutX="24.0" layoutY="245.0" prefHeight="30.0" prefWidth="180.0" promptText="Mobil" />
+            </children>
+        </AnchorPane>
+        <TableView fx:id="table_cars" layoutX="228.0" layoutY="69.0" onMouseClicked="#getSelected" prefHeight="481.0" prefWidth="772.0" AnchorPane.rightAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="47.0" text="ID" />
+                <TableColumn fx:id="col_name" prefWidth="162.0" text="Jméno a přijmeni" />
+                <TableColumn fx:id="col_date" prefWidth="132.0" text="Datum příchodu" />
+                <TableColumn fx:id="col_time" prefWidth="103.0" text="Čas příchodu" />
+                <TableColumn fx:id="col_type" prefWidth="71.0" text="Typ" />
+            <TableColumn fx:id="col_date1" prefWidth="142.0" text="Datum příchodu" />
+            <TableColumn fx:id="col_phone" prefWidth="114.0" text="Mobil" />
+            </columns>
+        </TableView>
+        <TextField fx:id="filterField" layoutX="350.0" layoutY="30.0" promptText="Hledat" AnchorPane.rightAnchor="300.0" />
+    </children>
+</AnchorPane>
